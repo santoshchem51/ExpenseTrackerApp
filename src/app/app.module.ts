@@ -9,13 +9,15 @@ import { WelcomeComponent } from './home/welcome.component';
 import { appRoutes } from 'app/routes';
 import { Error404Component } from './errors/404.component'
 import { NavBarComponent } from 'app/nav/navbar.component';
+import { ExpenseGroupsComponent } from 'app/expensegroups/expensegroups.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     Error404Component,
-    NavBarComponent    
+    NavBarComponent,
+    ExpenseGroupsComponent    
   ],
   imports: [
     BrowserModule,
