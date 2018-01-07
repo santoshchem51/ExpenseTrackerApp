@@ -14,7 +14,8 @@
   }
   
   .container {
-    padding-top: 10px;
+    padding-top: 10px !important;
+    background-color: #d9edf7 !important;
   }
   
   .pointable {
@@ -27,17 +28,4 @@
   
   [hidden] {
     display: none !important;
-  }
-  
-  .toast-success {
-    background-color: #51a351;
-  }
-  .toast-error {
-    background-color: #bd362f;
-  }
-  .toast-info {
-    background-color: #2f96b4;
-  }
-  .toast-warning {
-    background-color: #f89406;
-  }
+  }  
