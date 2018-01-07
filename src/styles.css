@@ -1,7 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 .hoverwell:hover {
-    background-color: #485563;
+    background-color: #428bca;
     cursor: pointer;
+  }
+  .navbar-default {    
+    background-color: #428bca !important;           
+  }
+  .navbar-brand {
+    color: whitesmoke !important;  
+  } 
+  .navbar-nav li a{
+    color:white !important;
   }
   
   .container {

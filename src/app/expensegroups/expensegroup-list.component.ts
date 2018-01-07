@@ -2,10 +2,15 @@ import {Component} from '@angular/core'
 import { IExpenseGroup } from 'app/expensegroups/expensegroup';
 
 @Component({
-templateUrl : './expensegroups.component.html'
+templateUrl : './expensegroup-list.component.html',
+styles:[`
+.pad-left { margin-left: 10px; }
+.thumbnail { min-height: 210px; }
+`]
+
 })
 
-export class ExpenseGroupsComponent {
+export class ExpenseGroupListComponent {
     pageTitle : string = "Expense groups";
     expenseGroups : IExpenseGroup[] = [
         {
