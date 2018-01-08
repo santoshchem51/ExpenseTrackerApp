@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf='expenseGroup' >
     <div class="row">
         <div class="col-md-11">
             <h2>{{expenseGroup.title | uppercase}}</h2>
@@ -39,12 +39,12 @@
         </div>
         <div class="col-md-10">          
             <div well-title>
-              {{expense.description}}
+             Discription: {{expense.description}}
               <!-- <i *ngIf="session.voters.length > 3" class="glyphicon glyphicon-fire" style="color:red"></i> -->
             </div>
             <div well-body>             
-              <span>Duration: {{expense.date}}</span><br />
-              <span>Amount: {{expense.amount}}</span>             
+              <span>Duration: {{expense.date|date:'shortDate'}}</span><br />
+              <span>Amount: {{expense.amount | currency:'USD':'true'}}</span>             
             </div>          
         </div>
       </div>

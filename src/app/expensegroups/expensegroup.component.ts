@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IExpenseGroup } from 'app/expensegroups/expensegroup';
+import { IExpenseGroup, ExpenseGroup } from 'app/expensegroups/expensegroup';
+import { ExpenseGroupsService } from 'app/shared/expensegroups.service';
+import { ActivatedRoute } from '@angular/router';
+import { OnInit } from '@angular/core';
 
 @Component({
 templateUrl : './expensegroup.component.html',
@@ -10,22 +13,19 @@ styles:[`
 }
 `]
 })
-export class ExpenseGroupComponent {
+export class ExpenseGroupComponent implements OnInit {
+
    
-    expenseGroup: IExpenseGroup = {
-        "id": 6,
-      "userId": "https://expensetrackeridsrv3/embedded_3",
-      "title": "Microsoft BUILD Conference",
-      "description": "BUILD conference in San Francisco",
-      "expenseGroupStatusId": 1,
-      "expenses": [
-        {
-          "id": 16,
-          "description": "Entrance tickets",
-          "date": "2014-04-01T00:00:00",
-          "amount": 1200.0,
-          "expenseGroupId": 6
-        }
-      ]
+    constructor(private _expenseGroupService : ExpenseGroupsService, private _route : ActivatedRoute){
+
     }
+    ngOnInit(): void {
+      let id = this._route.snapshot.params['id'];
+      this._expenseGroupService.getExpenseGroups().subscribe(expenseGroups=>{
+       this.expenseGroup =  expenseGroups.find((expGrp:IExpenseGroup)=>
+            expGrp.id == id    
+      )
+      })
+    }
+    expenseGroup: IExpenseGroup;
 }

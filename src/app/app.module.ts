@@ -11,6 +11,8 @@ import { Error404Component } from './errors/404.component'
 import { NavBarComponent } from 'app/nav/navbar.component';
 import { ExpenseGroupListComponent } from 'app/expensegroups/expensegroup-list.component';
 import { ExpenseGroupComponent } from 'app/expensegroups/expensegroup.component';
+import { ExpenseGroupsService } from 'app/shared/expensegroups.service';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,7 @@ import { ExpenseGroupComponent } from 'app/expensegroups/expensegroup.component'
     Error404Component,
     NavBarComponent,
     ExpenseGroupListComponent,
-    ExpenseGroupComponent    
+    ExpenseGroupComponent           
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,7 @@ import { ExpenseGroupComponent } from 'app/expensegroups/expensegroup.component'
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ExpenseGroupsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
