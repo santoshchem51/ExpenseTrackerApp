@@ -8,7 +8,7 @@ const spawn = require('cross-spawn');
  * Remove build directory.
  */
 gulp.task('clean', function (cb) {
-    return del(["dist"], cb);
+    return del(["client/app"], cb);
 });
 
 gulp.task('compile', ['clean'], () => {
@@ -17,4 +17,6 @@ gulp.task('compile', ['clean'], () => {
 
 gulp.task("default", ['compile'], function () {
     console.log("Building the project ...");
+    gulp.src('dist/**/*')
+    .pipe(gulp.dest('client/app'));
 });
