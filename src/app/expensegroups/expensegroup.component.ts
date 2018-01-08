@@ -10,8 +10,7 @@ styles:[`
 .row {margin-left: -15px; 
     margin-right: -15px;     
     text-align:left;
-}
-`]
+}`]
 })
 export class ExpenseGroupComponent implements OnInit {
 

@@ -12,6 +12,7 @@ import { NavBarComponent } from 'app/nav/navbar.component';
 import { ExpenseGroupListComponent } from 'app/expensegroups/expensegroup-list.component';
 import { ExpenseGroupComponent } from 'app/expensegroups/expensegroup.component';
 import { ExpenseGroupsService } from 'app/shared/expensegroups.service';
+import { CollapsibleContentComponent } from 'app/common/collapsable-content.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ExpenseGroupsService } from 'app/shared/expensegroups.service';
     Error404Component,
     NavBarComponent,
     ExpenseGroupListComponent,
-    ExpenseGroupComponent           
+    ExpenseGroupComponent,
+    CollapsibleContentComponent           
   ],
   imports: [
     BrowserModule,
