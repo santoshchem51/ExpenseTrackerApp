@@ -5,6 +5,5 @@ import { Component } from "@angular/core";
     templateUrl: './navbar.component.html'
 })
 export class NavBarComponent {
-
-
+    navdefault : string = "default nav bar";
 }

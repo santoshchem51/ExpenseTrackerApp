@@ -18,5 +18,5 @@ gulp.task('compile', ['clean'], () => {
 gulp.task("default", ['compile'], function () {
     console.log("Building the project ...");
     gulp.src('dist/**/*')
-    .pipe(gulp.dest('client/app'));
+    .pipe(gulp.dest('client/'));
 });

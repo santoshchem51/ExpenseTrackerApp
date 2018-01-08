@@ -394,7 +394,7 @@ exports = module.exports = __webpack_require__(373)();
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\r\n.hoverwell:hover {\r\n    background-color: #428bca;\r\n    cursor: pointer;\r\n  }\r\n  .navbar-default {    \r\n    background-color: #428bca !important;           \r\n  }\r\n  .navbar-brand {\r\n    color: whitesmoke !important;  \r\n  } \r\n  .navbar-nav li a{\r\n    color:white !important;\r\n  }\r\n  \r\n  .container {\r\n    padding-top: 10px !important;\r\n    background-color: #d9edf7 !important;\r\n  }\r\n  \r\n  .pointable {\r\n    cursor: pointer;\r\n  }\r\n  \r\n  button {\r\n    color: #555;\r\n  }\r\n  \r\n  [hidden] {\r\n    display: none !important;\r\n  }  \r\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\r\n.hoverwell:hover {\r\n    background-color: #428bca;\r\n    cursor: pointer;\r\n  }\r\n  .navbar-default {    \r\n    background-color: #428bca !important;           \r\n  }\r\n  .navbar-brand {\r\n    color: whitesmoke !important;  \r\n  } \r\n  .navbar-nav li a{\r\n    color:white !important;\r\n  }  \r\n  .container {\r\n    padding-top: 10px !important;\r\n    background-color: #d9edf7 !important;\r\n  }  \r\n  .pointable {\r\n    cursor: pointer;\r\n  }  \r\n  button {\r\n    color: #555;\r\n  }      \r\n", ""]);
 
 // exports
 

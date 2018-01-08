@@ -11,21 +11,14 @@
   } 
   .navbar-nav li a{
     color:white !important;
-  }
-  
+  }  
   .container {
     padding-top: 10px !important;
     background-color: #d9edf7 !important;
-  }
-  
+  }  
   .pointable {
     cursor: pointer;
-  }
-  
+  }  
   button {
     color: #555;
-  }
-  
-  [hidden] {
-    display: none !important;
-  }  
+  }      
