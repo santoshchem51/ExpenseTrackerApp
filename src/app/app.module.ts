@@ -14,7 +14,7 @@ import { ExpenseGroupComponent } from 'app/expensegroups/expensegroup.component'
 import { ExpenseGroupsService } from 'app/shared/expensegroups.service';
 import { CollapsibleContentComponent } from 'app/common/collapsable-content.component';
 import { ExpenseListComponent } from 'app/expenses/expense-list.component';
-
+import { LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { ExpenseListComponent } from 'app/expenses/expense-list.component';
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ExpenseGroupsService],
+  providers: [ExpenseGroupsService, {provide: LocationStrategy, useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
