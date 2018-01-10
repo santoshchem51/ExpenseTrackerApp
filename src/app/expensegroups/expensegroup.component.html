@@ -1,53 +1,19 @@
-<div class="container" *ngIf='expenseGroup' >
-    <div class="row">
-        <div class="col-md-11">
-            <h2>{{expenseGroup.title | uppercase}}</h2>
-        </div>        
-    </div>
-    <div class="row">
-        <div class="col-md-6">        
-            <div><strong>UserId</strong>: {{expenseGroup.userId}}</div>
-            <div><strong>Description</strong>: {{expenseGroup.description}}</div>            
-        </div>
-        <div class="col-md-6">
-            <div><strong>TotalExpense</strong>: {{expenseGroup.expenses.length}}</div>
-            <div><strong>Status</strong>: {{expenseGroup.expenseGroupStatusId}}</div>
-        </div>
-    </div>
+<div class="row" *ngIf='expenseGroup' >   
+        <div class="row">
+          <div class="col-md-10 expGrpDetail">           
+         <div class="col-md-10">
+                <h2>{{expenseGroup.title | uppercase}}</h2>
+         </div>       
+          <div class="col-md-5">        
+                <div><strong>UserId</strong>: {{expenseGroup.userId}}</div>
+                <div><strong>Description</strong>: {{expenseGroup.description}}</div>            
+           </div>
+           <div class="col-md-5">
+                <div><strong>TotalExpense</strong>: {{expenseGroup.expenses.length}}</div>
+                <div><strong>Status</strong>: {{expenseGroup.expenseGroupStatusId}}</div>
+           </div>  
+        </div>      
+        </div> 
     <hr/>
-
-    <div class="row" style="margin-bottom:10px">
-        <div class="col-md-2">
-            <h3 style="margin:0">Expenses</h3>
-        </div>
-        <div class="col-md-7">         
-              <div class="btn-group btn-group-sm" style="margin-left:50px;">
-              <button class="btn btn-default">By Date</button>
-              <button class="btn btn-default">By Amount</button>
-              <button class="btn btn-default">By Title</button>              
-            </div>
-          </div>
-          <div class="col-md-2">
-            <a>Add Expense</a>
-          </div>
-    </div>
-    <div class="row" *ngFor="let expense of expenseGroup.expenses">
-        <div class="col-md-1">
-          <!-- <div *ngIf="auth.isAuthenticated()">
-            <upvote (vote)="toggleVote(session)" [count]="session.voters.length" [voted]="userHasVoted(session)"></upvote>
-          </div> -->
-        </div>
-        <div class="col-md-10">
-            <collapsible-well>          
-            <div well-title>
-             Discription: {{expense.description}}
-              <!-- <i *ngIf="session.voters.length > 3" class="glyphicon glyphicon-fire" style="color:red"></i> -->
-            </div>
-            <div well-body>             
-              <span>Date: {{expense.date|date:'shortDate'}}</span><br />
-              <span>Amount: {{expense.amount | currency:'USD':'true'}}</span>             
-            </div>
-            </collapsible-well>          
-        </div>
-      </div>
+     <expense-list [isChildComponent]='true' [expenseList]='expenseGroup?.expenses' ></expense-list>
 </div>

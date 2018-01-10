@@ -1,72 +1,77 @@
-.expt-nav-wrapper {
-    position: absolute;
-    top: 3.6em;
-    left: 0em;
-    width: 13em;
-    height: 100%;
-    background-color: black;
-   transition: left 0.3s linear;
-   -moz-transition: left 0.3s linear;
-   -webkit-transition: left 0.3s linear;
 
-   .expt-nav-brand {   
-    font-size: large;
-    color: white;
-    margin-left: -.5em;
-    a {       
-       color: white;
-       :hover {
+.expt-nav-wrapper {
+  position: absolute;
+  top: 3.6em;
+  left: 0em;
+  width: 13em;
+  height: 100%;
+  background-color: black;
+ transition: left 0.3s linear;
+ -moz-transition: left 0.3s linear;
+ -webkit-transition: left 0.3s linear;
+    ul {
+      width: 11em;
+      list-style: none;
+      margin-top: 2em;
+      margin-left: 1em;
+      padding: 0em;
+    };
+    ul li, ul li ul li {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      a {
+        color: #999999;
+        text-decoration: none;
+        padding: .5em;        
+      }
+      a:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+      a:active, a:focus {
+        text-decoration: none;
+        outline: none;
+        color: white;
+      }
+    }
+    ul .expt-nav-brand {
+      margin-left: -.5em;
+      font-size: large;
+      color: white;
+      a {
+        color: white;
+      }
+      a:hover {
         color: lightblue;
         background: none;
-       }
-    }
-   };
-
-   ul {
-    width: 11em;
+      }
+   }
+   ul li ul {
     list-style: none;
-    margin-top: 2em;
+    margin-top: 1em;
     margin-left: 1em;
-    padding: 0em; 
-
-    li, ul li {
-        margin-top: 1em;
-        margin-bottom: 0.5em;
-        a {
-            color: #999999;
-            text-decoration: none;
-            padding: .5em;           
-            :active, :focus {
-                text-decoration: none;
-                outline: none;
-                color: white;
-            };
-        }
-        a:hover {
-            color: #fff;
-            text-decoration: none;
-        }
-        
-    };
-    li ul {
-      list-style: none;
-      margin-top: 1em;
+    a span {
+      margin-top: -1em;
+      margin-bottom: -1em;
       margin-left: 1em;
+      padding-top: -1em;
+      padding-bottom: -1em;
     }
    }
- }
+}          
 
- @media all and (max-width: 768px) {
-    .expt-nav-wrapperr {
-      left: -10em;
-      ul li a i {
-        padding-left: 10em;
-        margin-top: -1em;
-        margin-bottom: -1em;
-      }
-    }    
-  
-    .body-content {
-      margin-left: 5em;
-    }
-  }
+@media all and (max-width: 768px) {
+ .expt-nav-wrapper {
+   left: -10em;
+ }
+ .expt-nav-wrapper ul li a i {
+  padding-left: 10em;
+  margin-top: -1em;
+  margin-bottom: -1em;
+}
+ 
+
+ .body-content {
+   margin-left: 5em;
+ }
+}

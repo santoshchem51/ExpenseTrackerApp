@@ -1,0 +1,30 @@
+<div class="row" *ngIf='expenseList'>
+        <div class="row expenseHeader" style="margin-bottom:10px">
+                <div class="col-md-2">
+                    <h3 style="margin:0">Expenses</h3>
+                </div>
+                <div class="col-md-7">         
+                      <div class="btn-group btn-group-sm" style="margin-left:50px;">
+                      <button class="btn btn-default" [class.active]="sortBy==='date'" (click)="doSortBy('date')" >By Date</button>
+                      <button class="btn btn-default" [class.active]="sortBy==='amount'" (click)="doSortBy('amount')" >By Amount</button>
+                      <button class="btn btn-default" [class.active]="sortBy==='title'"(click)="doSortBy('title')">By Title</button>              
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <a>Add Expense</a>
+                  </div>
+            </div>
+            <div class="row" *ngFor="let expense of expenseList">     
+                <div class="col-md-10">
+                    <collapsible-well>          
+                    <div well-title>
+                     Discription: {{expense.description}}              
+                    </div>
+                    <div well-body>             
+                      <span>Date: {{expense.date|date:'shortDate'}}</span><br />
+                      <span>Amount: {{expense.amount | currency:'USD':'true'}}</span>             
+                    </div>
+                    </collapsible-well>          
+                </div>
+            </div>
+</div>

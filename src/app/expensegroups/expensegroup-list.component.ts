@@ -5,12 +5,7 @@ import { OnInit } from '@angular/core';
 
 @Component({
 templateUrl : './expensegroup-list.component.html',
-styles:[`
-.pad-left { margin-left: 10px; }
-.thumbnail { min-height: 210px; }
-.thumbnail {text-align : left;}
-`]
-
+styleUrls:['./expensegroup-list.component.scss']
 })
 
 export class ExpenseGroupListComponent implements OnInit { 

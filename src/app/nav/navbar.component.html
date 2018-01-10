@@ -3,16 +3,24 @@
                 <li class="expt-nav-brand">
                     <a class="visible-sm visible-md visible-lg"  [routerLink]="['']" >Expense Tracker</a>
                 </li>
-                <li>
-                    <a class="visible-sm visible-md visible-lg" [routerLink]="['/expensegroups']" >Expense Groups</a>                    
+                <li>                  
+                    <a [routerLink]="['/expensegroups']" >
+                      <span class="visible-sm visible-md visible-lg">Expense Groups</span>
+                          <i class="glyphicon glyphicon-list-alt visible-xs"></i>                      
+                    </a>                    
                 </li>
                 <li>
-                        <a class="visible-sm visible-md visible-lg" [routerLink]="['/expensegroups']" >Expenses</a>                    
+                        <a [routerLink]="['/expenses']" >
+                          <span class="visible-sm visible-md visible-lg">Expenses</span>
+                          <i class="glyphicon glyphicon-tasks visible-xs"></i>         
+                          </a>                    
                 </li>
                 <li>
-                    <a (click) ='toogleDropDown()' class="visible-sm visible-md visible-lg">                       
-                         Add&nbsp;<b class="caret"></b>                       
-                       <i class="glyphicon glyphicon-globe visible-xs"></i>
+                    <a (click) ='toogleDropDown()'>
+                      <span class="visible-sm visible-md visible-lg"> 
+                         Add&nbsp;<b class="caret"></b>               
+                      </span>                       
+                      <i class="glyphicon glyphicon-pencil visible-xs"></i>
                      </a>
                      <div *ngIf="showDropDown" class="visible-sm visible-md visible-lg">
                             <ul id="ulAdd" data-parent="#sideNavParent">

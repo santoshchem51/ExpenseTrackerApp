@@ -6,11 +6,7 @@ import { OnInit } from '@angular/core';
 
 @Component({
 templateUrl : './expensegroup.component.html',
-styles:[`
-.row {margin-left: -15px; 
-    margin-right: -15px;     
-    text-align:left;
-}`]
+styleUrls:['./expensegroup.component.scss']
 })
 export class ExpenseGroupComponent implements OnInit {
 
