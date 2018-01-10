@@ -6,12 +6,13 @@ const spawn = require('cross-spawn');
 
 /**
  * Remove build directory.
- */
+
 gulp.task('clean', function (cb) {
     return del(["client/app"], cb);
 });
+ */
 
-gulp.task('compile', ['clean'], () => {
+gulp.task('compile', () => {
   spawn('ng', ['build'], { stdio: 'inherit' });
 });
 

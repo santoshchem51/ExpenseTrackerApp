@@ -1,24 +1,37 @@
-<div class="navbar navbar-default">
-    
-        <div class="navbar-header">
-            <a class="navbar-brand" [routerLink]="['']" >Expense Tracker</a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a [routerLink]="['/expensegroups']" >Expense Groups</a>                    
+<nav id="sideNavParent" class="expt-nav-wrapper">                
+            <ul id="sideNavParent">
+                <li class="expt-nav-brand">
+                    <a class="visible-sm visible-md visible-lg"  [routerLink]="['']" >Expense Tracker</a>
+                </li>
+                <li>                  
+                    <a [routerLink]="['/expensegroups']" >
+                      <span class="visible-sm visible-md visible-lg">Expense Groups</span>
+                          <i class="glyphicon glyphicon-list-alt visible-xs"></i>                      
+                    </a>                    
                 </li>
                 <li>
-                    <a>Create New Expense Group</a>
+                        <a [routerLink]="['/expenses']" >
+                          <span class="visible-sm visible-md visible-lg">Expenses</span>
+                          <i class="glyphicon glyphicon-tasks visible-xs"></i>         
+                          </a>                    
                 </li>
-            </ul>            
-            <div class="navbar-header navbar-right">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a>Login</a>
-                    </li>                    
-                </ul>
-            </div>
-        </div>
-    
-</div>
+                <li>
+                    <a (click) ='toogleDropDown()'>
+                      <span class="visible-sm visible-md visible-lg"> 
+                         Add&nbsp;<b class="caret"></b>               
+                      </span>                       
+                      <i class="glyphicon glyphicon-pencil visible-xs"></i>
+                     </a>
+                     <div *ngIf="showDropDown" class="visible-sm visible-md visible-lg">
+                            <ul id="ulAdd" data-parent="#sideNavParent">
+                              <li>
+                                <a href="#">New Expense Group</a>
+                              </li>
+                              <li>
+                                <a href="#">New Expense</a>
+                              </li>                              
+                            </ul>
+                          </div>
+                </li>
+            </ul>   
+    </nav>

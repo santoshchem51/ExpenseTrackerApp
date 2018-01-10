@@ -3,7 +3,8 @@ import { Component } from "@angular/core";
 
 @Component({
     selector:'app-welcome',
-    templateUrl :'./welcome.component.html'
+    templateUrl :'./welcome.component.html',
+    styleUrls:['./welcome.component.scss']
 })
 export class WelcomeComponent {
     public pageTitle : string = "Welcome to Expense Tracker Portal";

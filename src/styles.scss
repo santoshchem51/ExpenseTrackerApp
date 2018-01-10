@@ -1,0 +1,17 @@
+.container {
+  width: 100% !important;
+}
+header {
+  padding: .7em;
+  background-color: gray;
+  color: white;
+  font-size: large;
+  a {
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+    :hover {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, style } from '@angular/core';
 
 @Component({
   selector: 'collapsible-well',
@@ -9,7 +9,12 @@ import { Component, Input } from '@angular/core';
   </h4>
   <ng-content *ngIf="visible" select="[well-body]"></ng-content>
 </div>
-  `
+  `,
+  styles:[`.pointable:hover {
+    cursor: pointer;
+    background: #d6c5a8;
+  }`]
+  
 })
 export class CollapsibleContentComponent {
   visible: boolean = true;
