@@ -15,6 +15,11 @@ import { ExpenseGroupsService } from 'app/shared/expensegroups.service';
 import { CollapsibleContentComponent } from 'app/common/collapsable-content.component';
 import { ExpenseListComponent } from 'app/expenses/expense-list.component';
 import { LocationStrategy, HashLocationStrategy} from '@angular/common';
+import { firebaseAuthService } from 'app/shared/firebase.auth.service';
+import { LoginComponent } from 'app/admin/login.component';
+import { SignUpComponent } from 'app/admin/sign-up.component';
+import { environment } from 'environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -25,15 +30,19 @@ import { LocationStrategy, HashLocationStrategy} from '@angular/common';
     ExpenseGroupListComponent,
     ExpenseGroupComponent,
     CollapsibleContentComponent,
-    ExpenseListComponent           
+    ExpenseListComponent,
+    LoginComponent,
+    SignUpComponent           
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes)  
   ],
-  providers: [ExpenseGroupsService, {provide: LocationStrategy, useClass:HashLocationStrategy}],
+  providers: [ExpenseGroupsService, 
+              firebaseAuthService,
+              {provide: LocationStrategy, useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

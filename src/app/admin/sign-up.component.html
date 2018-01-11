@@ -1,0 +1,42 @@
+
+<div class="row singInForm">
+<h1>Register an Account</h1>
+<form #form="ngForm">    
+    <div class="form-group" [class.has-error]="em.invalid && em.touched">
+        <label class="control-label">Username </label>
+            <input type="text" placeholder="Enter Email Address" id="email" class="form-control"
+                [(ngModel)]="email" name="email" required #em="ngModel">
+            <div class="alert alert-danger" *ngIf="em.invalid && em.touched">
+                Email is required
+            </div>        
+    </div>
+
+    <div class="form-group" [class.has-error]="pwd1.invalid && pwd1.touched">
+      <label class="control-label">Password </label>
+        <input type="password" placeholder="Enter Password" id="password1" class="form-control"
+            [(ngModel)]="password1" name="password1" required #pwd1="ngModel">
+        <div *ngIf="pwd1.invalid && pwd1.touched" class="alert alert-danger">
+          Password required
+        </div>      
+    </div>
+
+    <div class="form=group"[class.has-error]="pwd2.invalid && pwd2.touched">
+      <label class="control-label">Confirm </label>
+        <input type="password" placeholder="Confirm Password" id="password2" class="form-control"
+            [(ngModel)]="password2" name="password2" required #pwd2="ngModel">
+        <div *ngIf="pwd2.invalid && pwd2.touched" class="alert alert-danger">
+          Confirm Password
+        </div>      
+    </div>
+
+    <div *ngIf="passwordFail" class="alert callout">
+      Passwords Do Not Match
+    </div>
+    <div class="small-12 columns">
+      <div class="expanded button-group">
+        <button [disabled]="form.invalid" class="btn btn-primary" (click)="signUp()">Sign Up</button>
+        <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+      </div>
+    </div>    
+</form>
+</div>

@@ -1,7 +1,12 @@
 <div class="row">
         <header>
-          <a href="">Expense Tracker Portal</a>
-          <!-- <a class="navbar-right">Login</a> -->
+        <div class="left">
+              <a class="" href="">Expense Tracker Portal</a> 
+              <a *ngIf="!userLoggedIn" class="admin" [routerLink] = "['/admin/login']" >LogIn</a>
+              <a *ngIf="!userLoggedIn" class="admin" [routerLink] = "['/admin/signup']">SignUp</a>                
+              <a *ngIf="userLoggedIn" class="admin" [routerLink] ="">LogOut</a>
+              <label *ngIf="userLoggedIn">{{userName}}</label>
+          </div>
         </header>
 </div>
 <nav-bar></nav-bar>
