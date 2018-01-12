@@ -13,12 +13,21 @@ export class NavBarComponent implements OnInit {
     userName:string;
 
     constructor(private _authService: firebaseAuthService){
-
-  
+        _authService.authUser.subscribe((auth) =>{
+            if(auth == null){
+                this.userLoggedIn = false;
+            } else{
+                this.userLoggedIn = true;
+                this.userName = auth.email;
+            }
+        });  
     }
     ngOnInit(){
-      this.userLoggedIn = this._authService.userLoggedIn;
-      this.userName = this._authService.loggedInUser;
+      
+    }
+    logout() {
+        this._authService.logout();
+        this.router.navigate(['/']);
     }
     toogleDropDown() : void {       
         this.showDropDown = !this.showDropDown;        

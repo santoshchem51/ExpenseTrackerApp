@@ -11,12 +11,17 @@ export class AppComponent implements OnInit {
   userLoggedIn:boolean;
   userName:string;
   constructor(private _authService: firebaseAuthService){
-
-  
+    _authService.authUser.subscribe((auth) =>{
+      if(auth == null){
+          this.userLoggedIn = false;
+      } else{
+          this.userLoggedIn = true;
+          this.userName = auth.email;
+      }
+  });  
   }
   ngOnInit(){
-    this.userLoggedIn = this._authService.userLoggedIn;
-    this.userName = this._authService.loggedInUser;
+    
   }
   
   pageTitle = 'Expense Tracker Demo App';

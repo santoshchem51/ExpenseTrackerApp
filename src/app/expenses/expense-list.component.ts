@@ -3,7 +3,7 @@ import { ExpenseGroupsService } from "app/shared/expensegroups.service";
 import { IExpense } from "app/expensegroups/expense";
 import { OnInit } from "@angular/core";
 import { OnChanges } from "@angular/core";
-import { Input } from "@angular/core/src/metadata/directives";
+import { Input } from "@angular/core";
 
 
 @Component({

@@ -15,25 +15,13 @@
                           <i class="glyphicon glyphicon-tasks visible-xs"></i>         
                           </a>                    
                 </li>
-                <li>
+                <li *ngIf="!userLoggedIn">
                     <a [routerLink]="['/admin/login']" >
                       <span class="visible-sm visible-md visible-lg">LogIn</span>
                       <i class="glyphicon glyphicon-tasks visible-xs"></i>         
                     </a>                    
                 </li>
-                <li>
-                    <a [routerLink]="['/admin/signup']" >
-                      <span class="visible-sm visible-md visible-lg">Sign Up</span>
-                      <i class="glyphicon glyphicon-tasks visible-xs"></i>         
-                    </a>                    
-                </li>
                 <li *ngIf="userLoggedIn">
-                    <a>
-                      <span class="visible-sm visible-md visible-lg">{{userName}} (LogOut)</span>
-                      <i class="glyphicon glyphicon-tasks visible-xs"></i>         
-                    </a>                    
-                </li>
-                <!-- <li>
                     <a (click) ='toogleDropDown()'>
                       <span class="visible-sm visible-md visible-lg"> 
                          Add&nbsp;<b class="caret"></b>               
@@ -50,6 +38,19 @@
                               </li>                              
                             </ul>
                           </div>
-                </li> -->
+                </li>
+                <li *ngIf="!userLoggedIn">
+                    <a [routerLink]="['/admin/signup']" >
+                      <span class="visible-sm visible-md visible-lg">Sign Up</span>
+                      <i class="glyphicon glyphicon-tasks visible-xs"></i>         
+                    </a>                    
+                </li>
+                <li *ngIf="userLoggedIn">
+                    <a (click)="logout()">
+                      <span class="visible-sm visible-md visible-lg">LogOut ({{userName}})</span>
+                      <i class="glyphicon glyphicon-tasks visible-xs"></i>         
+                    </a>                    
+                </li>
+             
             </ul>   
     </nav>

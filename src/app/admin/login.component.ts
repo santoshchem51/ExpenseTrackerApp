@@ -1,6 +1,6 @@
-import { Component } from "@angular/core/src/metadata/directives";
+import { Component } from "@angular/core";
 import { firebaseAuthService } from "app/shared/firebase.auth.service";
-import { Router } from "@angular/router/src/router";
+import { Router } from "@angular/router";
 import {FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({

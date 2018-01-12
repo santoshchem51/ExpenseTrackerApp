@@ -14,6 +14,7 @@ export class ExpenseGroupComponent implements OnInit {
     constructor(private _expenseGroupService : ExpenseGroupsService, private _route : ActivatedRoute){
 
     }
+    
     ngOnInit(): void {
       let id = this._route.snapshot.params['id'];
       this._expenseGroupService.getExpenseGroups().subscribe(expenseGroups=>{

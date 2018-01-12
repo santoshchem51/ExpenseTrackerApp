@@ -18,8 +18,10 @@ import { LocationStrategy, HashLocationStrategy} from '@angular/common';
 import { firebaseAuthService } from 'app/shared/firebase.auth.service';
 import { LoginComponent } from 'app/admin/login.component';
 import { SignUpComponent } from 'app/admin/sign-up.component';
-import { environment } from 'environments/environment';
-
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,10 @@ import { environment } from 'environments/environment';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)  
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule    
   ],
   providers: [ExpenseGroupsService, 
               firebaseAuthService,
