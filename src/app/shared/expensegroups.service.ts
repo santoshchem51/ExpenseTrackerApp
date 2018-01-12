@@ -26,9 +26,13 @@ export class ExpenseGroupsService {
         return this._http.get(this.apiUrl +'/expenses')
         .map(res=> res.json())
         .do(data=> console.log('All data: '+JSON.stringify(data)))
-        .catch(this.handleError)
+        .catch(this.hanldeErrorExpense)
     }
 
+    private hanldeErrorExpense(err:any) :Observable<IExpense[]>{
+        console.log(err.message);
+        throw Observable.throw(err.message);
+    }
     private handleError(err : any) : Observable<IExpenseGroup[]>
     {
         console.log(err.message);
