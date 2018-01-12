@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { firebaseAuthService } from 'app/shared/firebase.auth.service';
-
+import { Router } from "@angular/router";
 @Component({
     selector:'nav-bar',
     templateUrl: './navbar.component.html',
@@ -12,7 +12,7 @@ export class NavBarComponent implements OnInit {
     userLoggedIn:boolean;
     userName:string;
 
-    constructor(private _authService: firebaseAuthService){
+    constructor(private _authService: firebaseAuthService, private _router: Router ){
         _authService.authUser.subscribe((auth) =>{
             if(auth == null){
                 this.userLoggedIn = false;
@@ -27,7 +27,7 @@ export class NavBarComponent implements OnInit {
     }
     logout() {
         this._authService.logout();
-        this.router.navigate(['/']);
+        this._router.navigate(['/']);
     }
     toogleDropDown() : void {       
         this.showDropDown = !this.showDropDown;        
